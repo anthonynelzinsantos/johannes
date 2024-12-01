@@ -17,7 +17,7 @@
 :root {
     --font: "Inter", sans-serif;
     --bg-html: lch(98% 10 70);
-    --bg-hover: lch(80% 45 70);
+    --bg-hover: lch(80% 50 70);
     --color-link: lch(20% 35 350);
     --color-txt: lch(20% 10 70);
     --space-3xs: clamp(0.25rem, 0.2188rem + 0.1563vw, 0.3125rem);
@@ -32,8 +32,8 @@
     --size-font: clamp(1rem, 0.9375rem + 0.3124vw, 1.125rem);
 }
 
-::marker {
-	color: var(--color-markup);
+::selection {
+	background: var(--bg-hover);
 }
 
 html {
@@ -52,6 +52,7 @@ body {
 	font-size: var(--size-font);
 	font-variant-ligatures: no-common-ligatures;
 	line-height: 1.5em;
+	margin: 11vh 0 0 0;
 	max-width: 1200px;
 	padding: var(--space-s) var(--space-s) var(--space-s) var(--space-s);
 }
@@ -64,8 +65,10 @@ body {
 }
 
 a {
+	border-bottom: 1px solid;
 	color: var(--color-link);
-	transition: color .1s linear, background-color .1s linear;
+	text-decoration: none;
+	transition: all .1s linear;
 }
 
 a:focus,
@@ -74,17 +77,42 @@ a:hover {
 	text-decoration-color: var(--bg-hover);
 }
 
+.unstyled,
+.unstyled:focus,
+.unstyled:hover {
+	background: none;
+	border: none;
+	color: unset;
+}
+
 #header {
-	display: flex;
-	grid-column: 2 / -2;
-	grid-row: 2;
+	display: grid;
+		align-items: center;
+		grid-template-columns: subgrid;
+	grid-column: 2 / -3;
+	
+	& .logo {
+		display: contents;
+		justify-self: center;
+		grid-column: 1;
+		
+		& img {
+			object-fit: fill;
+			width: 33vw;
+				max-width: 100%;
+		}
+	}
+	
+	& .navigation {
+		justify-self: right;
+		grid-column: -1;
+	}
 }
 
 #main {
 	display: grid;
 		grid-template-columns: subgrid;
-	grid-column: 2 / -2;
-	grid-row: 3;
+	grid-column: 2 / -3;
 
 	& .home {
 		grid-column: 1 / 5;
