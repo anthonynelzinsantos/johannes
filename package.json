@@ -15,11 +15,10 @@
         "image_sizes": {},
         "card_assets": true,
         "custom": {
-			"description": {
+			"tagline": {
 				"type": "text",
-				"default": "Hello! I’m Johannes and this is my website.",
-				"group": "homepage",
-				"description": "A short description of the website, displayed on the homepage."
+				"default": "Lorem ipsum.",
+				"description": ""
 			}
 		}
     },
