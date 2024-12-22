@@ -1,0 +1,32 @@
+{{!< default}}
+
+<main class="list" id="main">
+	<aside id="sidebar">
+		{{#tag}}
+			<header>
+				<h1>{{name}}</h1>
+				{{#if description}}
+					<p class="description">{{description}}</p>
+				{{/if}}
+			</header>
+		{{/tag}}
+		
+		{{#foreach posts}}
+			{{#if @last}}<p class="count">{{plural @number empty='No entries' singular='% entry' plural='% entries'}}</p>{{/if}}
+		{{/foreach}}
+    </aside>
+
+	<div class="{{post_class}}" id="content">
+		{{#foreach posts}}
+            <article class="{{post_class}}">
+            	<!-- Ajouter une petite miniature carrée à gauche avec chargement progressif -->
+            
+				<h2><a href="{{ url }}">{{ title }}</a></h2>
+				<!-- Ajouter tags sous le titre -->
+				
+				<time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+				<!-- Rejeter la date à droite et centrer le tout -->
+			</article>
+        {{/foreach}}
+    </div>
+</main>

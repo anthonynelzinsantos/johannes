@@ -1,9 +1,12 @@
 {{!< default}}
 
 <main id="main">
-	{{> content}}
+	<aside id="sidebar">
+    </aside>
 
-	{{#if @custom.description}}
-    	{{@custom.description}}
-	{{/if}}
+	<article class="{{post_class}}" id="content">
+		{{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </article>
 </main>
