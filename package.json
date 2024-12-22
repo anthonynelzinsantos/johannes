@@ -11,14 +11,28 @@
         "mobile": "assets/screenshot-mobile.jpg"
     },
     "config": {
-        "posts_per_page": 10,
-        "image_sizes": {},
-        "card_assets": true,
+		"card_assets": true,
         "custom": {
 			"tagline": {
 				"type": "text",
 				"default": "Lorem ipsum.",
 				"description": ""
+			}
+		},
+		"image_sizes": {
+			"s": {
+				"height": 100,
+				"width": 100
+			},
+			"m": {
+				"height": 200,
+				"width": 200
+			},
+			"l": {
+				"width": 800
+			},
+			"xl": {
+				"width": 1600
 			}
 		}
     },
