@@ -120,7 +120,7 @@ h1 {
 			cursor: pointer;
 		
 			& img {
-				transform: scale(120%);
+				transform: scale(120%) rotate(-5deg);
 			}
 		}
 		
