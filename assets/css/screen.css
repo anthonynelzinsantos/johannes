@@ -16,7 +16,7 @@
 
 :root {
     --font: "Inter", sans-serif;
-    --bg-html: lch(98% 5 350);
+    --bg-html: lch(98% 5 70);
     --bg-hover: lch(20% 35 350);
     --color-border: lch(20% 35 350);
     --color-hover: lch(80% 50 70);
