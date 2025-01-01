@@ -1,0 +1,47 @@
+{{!< default}}
+
+<main class="list" id="main">
+	<aside id="sidebar">
+		{{#tag}}
+			<header>
+				<h1>{{name}}</h1>
+				{{#if description}}
+					<p class="description">{{description}}</p>
+				{{/if}}
+			</header>
+		{{/tag}}
+		
+		{{#foreach posts}}
+			{{#if @last}}<p class="count">{{plural @number empty='No entries' singular='% entry' plural='% entries'}}</p>{{/if}}
+		{{/foreach}}
+    </aside>
+
+	<div class="{{post_class}}" id="content">
+		{{#foreach posts}}
+			<a class="{{post_class}}" href="{{ url }}">
+            	<article>
+					<picture class="post-card-image"
+						<source srcset="{{img_url feature_image size="s" format="avif"}},
+										{{img_url feature_image size="m" format="avif"}} 2x"
+								type="image/avif"
+						>
+						<img srcset="{{img_url feature_image size="s"}},
+									 {{img_url feature_image size="m"}} 2x"
+							 src="{{img_url feature_image size="m"}}"
+							 height="100"
+							 width="100"
+							 alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+							 loading="lazy"
+						/>
+					</picture>
+					
+					<h2>{{ title }}</h2>
+					{{#tags.[1]}}#{{name}}{{/tags.[1]}}
+					
+					<time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+					<!-- Rejeter la date à droite et centrer le tout -->
+				</article>
+			</a>
+        {{/foreach}}
+    </div>
+</main>
